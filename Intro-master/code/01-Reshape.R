@@ -6,7 +6,7 @@
 
 # Values in column names 
 
-raw <- read.csv("data/pew.csv", check.names = F)
+raw <- read.csv("data/pew.csv", check.names = F) #JKC Annotation 1
 
 head(raw)
 
@@ -30,10 +30,10 @@ raw <- melt(raw,
   id = c("year", "month", "element"),
   variable.name = "day", na.rm = TRUE)
 raw$day <- as.numeric(as.character(raw$day))
-raw <- raw[, c("year", "month", "day", "element", "value")]
+raw <- raw[, c("year", "month", "day", "element", "value")] #JKC Annotation 2
 # ------------------------------------------
 
-head(raw)
+head(raw) #JKC Annotation 3
 
 tidy <- dcast(raw, year + month + day ~ element, 
   value.var = "value")
